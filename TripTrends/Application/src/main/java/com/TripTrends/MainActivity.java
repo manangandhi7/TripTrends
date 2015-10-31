@@ -89,6 +89,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
                 }
                 break;
+            case R.id.search_button:
+
+                break;
         }
     }
 }
