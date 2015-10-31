@@ -1,138 +1,94 @@
 package com.TripTrends;
 
 import android.app.Activity;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupClickListener;
-import android.widget.ExpandableListView.OnGroupCollapseListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-public class MainActivity extends Activity {
-
-    ExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
-
+public class MainActivity extends Activity implements View.OnClickListener {
+    private static String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // get the listview
-        expListView = (ExpandableListView) findViewById(R.id.lvExp);
+        EditText editText = (EditText)findViewById(R.id.city_name);
+        editText.setText(getString(R.string.enter_city), TextView.BufferType.EDITABLE);
+        editText.setOnClickListener(this);
 
-        // preparing list data
-        prepareListData();
 
-        listAdapter = new CustomExpandableListAdapter (this, listDataHeader, listDataChild);
-
-        // setting list adapter
-        expListView.setAdapter(listAdapter);
-
-        // Listview Group click listener
-        expListView.setOnGroupClickListener(new OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v,
-                                        int groupPosition, long id) {
-                // Toast.makeText(getApplicationContext(),
-                // "Group Clicked " + listDataHeader.get(groupPosition),
-                // Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        // Listview Group expanded listener
-        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Expanded",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Listview Group collasped listener
-        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        listDataHeader.get(groupPosition) + " Collapsed",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        // Listview on child click listener
-        expListView.setOnChildClickListener(new OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                // TODO Auto-generated method stub
-                Toast.makeText(
-                        getApplicationContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
-                return false;
-            }
-        });
     }
-
-    /*
-         * Preparing the list data
-         */
-    private void prepareListData() {
-        listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
-
-        // Adding child data
-        listDataHeader.add("Top 250");
-        listDataHeader.add("Now Showing");
-        listDataHeader.add("Coming Soon..");
-
-        // Adding child data
-        List<String> top250 = new ArrayList<String>();
-        top250.add("The Shawshank Redemption");
-        top250.add("The Godfather");
-        top250.add("The Godfather: Part II");
-        top250.add("Pulp Fiction");
-        top250.add("The Good, the Bad and the Ugly");
-        top250.add("The Dark Knight");
-        top250.add("12 Angry Men");
-
-        List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("The Conjuring");
-        nowShowing.add("Despicable Me 2");
-        nowShowing.add("Turbo");
-        nowShowing.add("Grown Ups 2");
-        nowShowing.add("Red 2");
-        nowShowing.add("The Wolverine");
-
-        List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
-
-        listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), nowShowing);
-        listDataChild.put(listDataHeader.get(2), comingSoon);
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.city_name:
+                EditText editText = (EditText) findViewById(R.id.city_name);
+                if (editText.getText().toString().equals(getString(R.string.enter_city))) {
+                    editText.setText("");
+                }
+                break;
+            case R.id.class1:
+                TextView textView = (TextView)findViewById(R.id.class1);
+                ColorDrawable cd = (ColorDrawable) textView.getBackground();
+                int colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+            case R.id.class2:
+                textView = (TextView)findViewById(R.id.class2);
+                cd = (ColorDrawable) textView.getBackground();
+                colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+            case R.id.class3:
+                textView = (TextView)findViewById(R.id.class3);
+                cd = (ColorDrawable) textView.getBackground();
+                colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+            case R.id.class4:
+                textView = (TextView)findViewById(R.id.class4);
+                cd = (ColorDrawable) textView.getBackground();
+                colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+            case R.id.class5:
+                textView = (TextView)findViewById(R.id.class5);
+                cd = (ColorDrawable) textView.getBackground();
+                colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+            case R.id.class6:
+                textView = (TextView)findViewById(R.id.class6);
+                cd = (ColorDrawable) textView.getBackground();
+                colorCode = cd.getColor();
+                if (colorCode == getResources().getColor(R.color.holo_orange_light)) {
+                    textView.setBackgroundColor(getResources().getColor(R.color.OrangeRed));
+                } else {
+                    textView.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+                }
+                break;
+        }
     }
 }

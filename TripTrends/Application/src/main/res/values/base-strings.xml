@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="app_name">Trip Trends</string>
+    <string name="enter_city">Enter the Place you wanna visit!</string>
+    <string name="class1">Touristic</string>
+    <string name="class2">Adventure</string>
+    <string name="class3">Unexplored</string>
+    <string name="class4">Panaromic</string>
+    <string name="class5">Wellness</string>
+    <string name="class6">Relax</string>
+    <string name="plus_minus">+/-</string>
+    <string name="enter_days">Enter Days:</string>
+    <string name="search">Go!</string>
+
+    <string-array name="plus_minus_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
 </resources>
