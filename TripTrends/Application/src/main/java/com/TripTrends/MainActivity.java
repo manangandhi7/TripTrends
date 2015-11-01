@@ -6,9 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.*;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private static String TAG = "MainActivity";
@@ -24,10 +22,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         editText.setText(getString(R.string.enter_city), TextView.BufferType.EDITABLE);
         editText.setOnClickListener(this);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.city_name);
+        textView.setAdapter(adapter);
+
         //this.setTitle("Berlin");
         this.getActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF' Bold=\"true\" size = \"20\">" + getString(R.string.app_name) + "</font>"));
 
     }
+
+    private static final String[] COUNTRIES = new String[] {
+            "Berlin", "Frankfurt", "Brussels", "Bombay", "Munich"
+    };
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
