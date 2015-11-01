@@ -4,74 +4,91 @@
               android:orientation="horizontal"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              android:padding="5dp">
+              android:padding="5dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_height="0dp"
+            android:layout_width="fill_parent"
+            android:layout_weight="0.3"
+            android:orientation="horizontal">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="vertical"
-                  android:layout_width="wrap_content"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
                   android:layout_height="wrap_content">
-
-
         <TextView
-                android:id="@+id/measurement_name"
+                android:id="@+id/city_name"
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="My 1st Measurement"
+                android:layout_height="wrap_content"
+                android:text="Paris"
                 android:textColor="@color/orange"
                 android:textSize="20dp"
-                android:layout_gravity="left"/>
+                android:layout_gravity="left|center_vertical"/>
+        <TextView
+                android:id="@+id/num_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 days"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:layout_gravity="center"/>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                      android:orientation="horizontal"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/stars_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:layout_gravity="right|center_vertical"/>
+                                                                <!--formating to do-->
+        <TextView
+                android:id="@+id/kilometers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:layout_gravity="right|center_vertical"/>
+        <TextView
+                android:id="@+id/categoty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:layout_gravity="right|center_vertical"/>
+        <TextView
+                android:id="@+id/review_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:layout_gravity="right|center_vertical"/>
 
-            <TextView
-                    android:id="@+id/measurement_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:text="16.11.2013 12:39 pm"
-                    android:textColor="@android:color/tertiary_text_light"
-                    android:layout_gravity="left"/>
-
-            <TextView
-                    android:id="@+id/measurement_sensor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:text="R2D2"
-                    android:layout_marginLeft="20dp"
-                    android:layout_gravity="left"
-                    android:textColor="@android:color/tertiary_text_light" />
-            <TextView
-                    android:id="@+id/measurement_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:visibility="gone"
-                    android:text="id1111"
-
-                    android:layout_gravity="left"/>
+        </RelativeLayout>
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="horizontal"
-                  android:layout_width="fill_parent"
-                  android:layout_height="fill_parent"
-                  android:gravity="right">
+    <LinearLayout
+            android:layout_height="0dp"
+            android:layout_width="fill_parent"
+            android:layout_weight="0.7"
+            android:orientation="horizontal">
 
         <ImageView
-                android:id="@+id/measurement_percentage_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:id="@+id/star1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="right|center_vertical"
+                android:visibility="invisible"
+                android:src="@drawable/back_cam"
                 />
-
         <ImageView
-                android:id="@+id/measurement_status_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:id="@+id/route_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="right|center_vertical"
+                android:visibility="invisible"
+                android:src="@drawable/back_cam"
                 />
     </LinearLayout>
 

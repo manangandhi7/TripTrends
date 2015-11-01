@@ -10,6 +10,9 @@ public class ReviewData {
     private int days;
     private String city;
     private int id;
+    private int stars;
+    private int distance;
+    public int imageID;
 
     public enum Categories {
         CLASSIC, ADVENTUROUS, UNEXPLORED, WELLNESS, PANORAMICVIEW,
@@ -20,11 +23,28 @@ public class ReviewData {
         city = ct;
     }
 
-    public String getCt(){
+    public String getCity(){
         return city;
     }
 
     ///////////
+    public void setStars(int strs) {
+        stars = strs;
+    }
+
+    public int getStars() {
+        return stars;
+    }
+
+    ///////////
+    public void setDistance(int dist) {
+        distance = dist;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
     public void setCategory(int cl) {
         curClass = cl;
     }
@@ -64,4 +84,5 @@ public class ReviewData {
     public int getId() {
         return id;
     }
+
 }

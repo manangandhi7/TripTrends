@@ -184,6 +184,8 @@
                 android:textSize="30dp"
                 android:textAlignment="center"
                 android:gravity="center"
+                android:onClick="onClick"
+                android:clickable="true"
                 android:layout_centerHorizontal="true"
                 android:text="@string/search" />
     </RelativeLayout>

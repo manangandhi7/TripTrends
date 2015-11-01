@@ -1,6 +1,7 @@
 package com.TripTrends;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -90,7 +91,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.search_button:
-
+                Intent toListIntent = new Intent(MainActivity.this, TripListActivity.class);
+                startActivity(toListIntent);
                 break;
         }
     }

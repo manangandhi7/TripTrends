@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name">Trip Trends</string>
+    <string name="app_name">Trip Around</string>
     <string name="enter_city">Enter the Place you wanna visit!</string>
     <string name="class1">Touristic</string>
     <string name="class2">Adventure</string>
