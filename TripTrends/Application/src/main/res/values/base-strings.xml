@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="app_name">Trip Around</string>
-    <string name="enter_city">Enter the Place you wanna visit!</string>
+    <string name="enter_city">Where do you want to go?</string>
     <string name="class1">Touristic</string>
     <string name="class2">Adventure</string>
     <string name="class3">Unexplored</string>

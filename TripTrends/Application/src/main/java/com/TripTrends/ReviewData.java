@@ -4,7 +4,7 @@ package com.TripTrends;
 * Created by manan on 10/31/2015.
 */
 public class ReviewData {
-    private int curClass;
+    public String category;
     private String comment;
     private int numPeople;
     private int days;
@@ -44,14 +44,6 @@ public class ReviewData {
 
     public int getDistance() {
         return distance;
-    }
-
-    public void setCategory(int cl) {
-        curClass = cl;
-    }
-
-    public int getCategory() {
-        return curClass;
     }
 
     ////////////

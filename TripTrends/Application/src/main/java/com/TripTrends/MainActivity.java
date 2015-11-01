@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,10 +17,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button button = (Button)findViewById(R.id.search_button);
+        //button.setBackgroundColor(getResources().getColor(R.color.holo_orange_light));
+
         EditText editText = (EditText)findViewById(R.id.city_name);
         editText.setText(getString(R.string.enter_city), TextView.BufferType.EDITABLE);
         editText.setOnClickListener(this);
 
+        //this.setTitle("Berlin");
+        this.getActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF' Bold=\"true\" size = \"20\">" + getString(R.string.app_name) + "</font>"));
 
     }
     @Override

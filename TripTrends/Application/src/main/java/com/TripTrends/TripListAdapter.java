@@ -32,8 +32,11 @@ import java.util.List;
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 v = inflater.inflate(R.layout.trip_list_item, null);
-
+                     if (v == null){
+                         throw new  RuntimeException("Fuck!");
+                     }
                 // fill the layout with the right values
+                //v.setBackgroundColor(Color.GRAY);
 
                 TextView idView = (TextView) v.findViewById(R.id.review_id);
                 TextView cityView = (TextView) v.findViewById(R.id.city_name);
@@ -43,6 +46,8 @@ import java.util.List;
                 TextView kmsView = (TextView) v.findViewById(R.id.kilometers);
                 ImageView starsImage = (ImageView) v.findViewById(R.id.star1);
                 ImageView routeView = (ImageView) v.findViewById(R.id.route_image);
+
+
 
                 holder.reviewId = idView;
                 holder.cityName = cityView;
@@ -68,28 +73,28 @@ import java.util.List;
 //                ex.printStackTrace();
 //            }
 
-            holder.reviewId.setText(m.getId());
+            holder.reviewId.setText(Integer.toString(m.getId()));
             holder.cityName.setText(m.getCity());
-            holder.starsRating.setText(m.getStars());
-            holder.numDays.setText(m.getDuration());
-            holder.category.setText(m.getCategory());
-            holder.kms.setText(m.getDistance());
+            holder.starsRating.setText(Integer.toString(m.getStars()));
+            holder.numDays.setText(Integer.toString(m.getDuration()) + " Days");
+            holder.category.setText(m.category);
+            holder.kms.setText(Integer.toString(m.getDistance()) + "km");
             holder.starImage.setImageResource(R.drawable.star);
             holder.routeImage.setImageResource(m.imageID);
 
             return v;
         }
 
-        public static ReviewData getMeasurementByID(String ID){
-            if(mReviewDataList != null){
-                for(ReviewData m : mReviewDataList){
-                    if(m != null && Integer.toString(m.getId()).equals(ID)){
-                        return m;
-                    }
-                }
-            }
-            return null;
-        }
+//        public static ReviewData getReviewItemByID(String ID){
+//            if(mReviewDataList != null){
+//                for(ReviewData m : mReviewDataList){
+//                    if(m != null && Integer.toString(m.getId()).equals(ID)){
+//                        return m;
+//                    }
+//                }
+//            }
+//            return null;
+//        }
 
         class DataHolder {
             public TextView reviewId;
