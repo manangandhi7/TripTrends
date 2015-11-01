@@ -123,8 +123,9 @@ public class TripListActivity extends Activity {
         rev1.setComment("Wildpark is nice place to have picnic!");
         rev1.setNumPeople(4);
         rev1.setId(1);
-        rev1.setStars(4);
+        rev1.setStars(5);
         rev1.setDistance(95);
+        rev1.ratedBy = 61;
         rev1.imageID = R.drawable.front_cam;
         rev1.setDuration(3);
 
@@ -135,15 +136,21 @@ public class TripListActivity extends Activity {
         rev1.setNumPeople(3);
         rev1.setId(2);
         rev1.setStars(4);
+        rev1.ratedBy = 54;
         rev1.setDistance(95);
-        rev1.imageID = R.drawable.front_cam;
-        rev2.setDuration(7);
+        rev1.imageID = R.drawable.map1;
+        rev2.setDuration(4);
 
         rev3.setCity("Berlin");
         rev3.setCategory(2);
         rev3.setNumPeople(3);
         rev3.setComment("Make sure to go to visit Louvr meusum so early!");
-        rev3.setDuration(7);
+        rev1.setNumPeople(4);
+        rev1.setId(3);
+        rev1.setStars(4);
+        rev1.setDistance(95);
+        rev1.imageID = R.drawable.map1;
+        rev3.setDuration(3);
 
         rev4.setCity("Berlin");
         rev4.setCategory(2);

@@ -13,6 +13,7 @@ public class ReviewData {
     private int stars;
     private int distance;
     public int imageID;
+    public int ratedBy;
 
     public enum Categories {
         CLASSIC, ADVENTUROUS, UNEXPLORED, WELLNESS, PANORAMICVIEW,
